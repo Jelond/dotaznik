@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style2.css">
+<style>
+body {
+paddint: 0;
+margin: 0;
+background-color: black;
+color: yellow;
+text-shadow: 0px 0px 5px white, 
+}
+
+.container {
+position: absolute;
+transform: translate(-50%, -50%);
+top: 50%;
+left: 50%;
+border: 3px solid yellow;
+border-radius: 10px;
+width: 60%;
+padding: 20px;
+display: none;
+
+}
+
+button {
+margin-top: 10px;
+margin-right: 10px;
+color: yellow;
+background-color: rgb(0,0,0,0.2);
+border: 1px solid black;
+font-size: 6vh;
+padding: 7px 14px;
+box-shadow: 0px 0px 3px 1px yellow;
+transition-duration: 0.4s;
+cursor: pointer;
+border-radius: 10%;
+} 
+
+button:hover {
+text-shadow: 0px 0px 3px yellow;
+}
+
+p {
+font-size: 6vh;
+}
+
+input {
+height: 4vh;
+width: 4vh;
+}
+{}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>1. Jakou fakultu studujete?</h1>
+<hr/>
+<p><input type="radio" name="question1">FTVS UK</p>
+<p><input type="radio" name="question1">FSV UK</p>
+<button class="next" onclick="next(1)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>2. V jakém jste ročníku</h1>
+<hr/>
+<p><input type="radio" name="question2">Prostě to zaškrtni</p>
+<button class="next" onclick="next(2)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>3. Jste žena nebo muž?</h1>
+<hr/>
+<p><input type="radio" name="question3">žena</p>
+<p><input type="radio" name="question3">muž</p>
+<button class="next" onclick="next(3)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>4. Uveďte číslo ZZS (zdravotnické záchranné služby):</h1>
+<hr/>
+<p><input type="radio" name="question4" id="correct4">155</p>
+<p><input type="radio" name="question4">158</p>
+<p><input type="radio" name="question4">150</p>
+<button class="next" onclick="next(4)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>5. Je zákonnou povinností občanů ČR poskytnout první pomoc?</h1>
+<hr/>
+<p><input type="radio" name="question5">Ano, vždy</p>
+<p><input type="radio" name="question5">Ne</p>
+<p><input type="radio" name="question5" id="correct5">Ano, pokud nejsme současně ohroženi na životě</p>
+<button class="next" onclick="next(5)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>6. Jaké životní funkce či rizika kontrolujeme u postiženého jako první?</h1>
+<hr/>
+<p><input type="radio" name="question6" id="correct6">Stav vědomí a dýchání</p>
+<p><input type="radio" name="question6">Puls</p>
+<p><input type="radio" name="question6">Zdali je přítomna otevřená rána</p>
+<button class="next" onclick="next(6)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>7. Jak zjistíte, že je postižený v bezvědomí?</h1>
+<hr/>
+<p><input type="radio" name="question7" id="correct7">Nereaguje na hlasité oslovení ani na bolestivý podnět</p>
+<p><input type="radio" name="question7">Nereaguje na hlasité oslovení, na bolestivý podnět se však probere</p>
+<p><input type="radio" name="question7">Postižený nedýchá</p>
+<button class="next" onclick="next(7)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>8. Co uděláte, pokud postižený nereaguje na žádný podnět a nedýchá (příp. si nejste jistí tím, zdali dýchá normálně) ?</h1>
+<hr/>
+<p><input type="radio" name="question8">Zavolám ZZS a zvednu postiženému nohy nad úroveň hlavy</p>
+<p><input type="radio" name="question8" id="correct8">Zavolám ZZS a začnu resuscitaci stlačováním hrudníku</p>
+<p><input type="radio" name="question8">Zavolám ZZS a začnu resuscitaci umělým dýcháním</p>
+<button class="next" onclick="next(8)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>9. Jaký výkon provádíme k uvolnění dýchacích cest u bezvědomého?</h1>
+<hr/>
+<p><input type="radio" name="question9">vytažením jazyka</p>
+<p><input type="radio" name="question9" id="correct9">záklonem hlavy</p>
+<p><input type="radio" name="question9">vyčištěním dutiny ústní</p>
+<button class="next" onclick="next(9)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>10. Jaký výkon provádíme k uvolnění dýchacích cest?</h1>
+<hr/>
+<p><input type="radio" name="question10">:-)</p>
+<p><input type="radio" name="question10" id="correct10">;-)</p>
+<p><input type="radio" name="question10">=)</p>
+<button class="next" onclick="next(10)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>11. Je nutné při resuscitaci vyhmatat puls?</h1>
+<hr/>
+<p><input type="radio" name="question11">Ano, puls lze vyhmatat na krku či na rukou</p>
+<p><input type="radio" name="question11">Ano, avšak nedoporučuje se puls vyhmatávat na krku kvůli umístění baroreceptorů</p>
+<p><input type="radio" name="question11" id="correct11">Není to nutné, zbytečně to zdržuje</p>
+<button class="next" onclick="next(11)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>12. Kde na hrudníku provádíme srdeční masáž?</h1>
+<hr/>
+<p><input type="radio" name="question12">V oblasti levé bradavky</p>
+<p><input type="radio" name="question12">Kdekoliv na hrudní kosti</p>
+<p><input type="radio" name="question12" id="correct12">Na dolní části hrudní kosti („ve středu hrudníku“)</p>
+<button class="next" onclick="next(12)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>13. Správná frekvence srdeční masáže je:</h1>
+<hr/>
+<p><input type="radio" name="question13">60-100 stlačení/min</p>
+<p><input type="radio" name="question13" id="correct13">100-120 stlačení/min</p>
+<p><input type="radio" name="question13">120-150 stlačení/min</p>
+<button class="next" onclick="next(13)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>14. Správný poměr umělých vdechů a srdeční masáže při resuscitaci je:</h1>
+<hr/>
+<p><input type="radio" name="question14" id="correct14">30 stlačení, 2 vdechy</p>
+<p><input type="radio" name="question14">15 stlačení, 1 vdech</p>
+<p><input type="radio" name="question14">15 stlačení, 2 vdechy</p>
+<button class="next" onclick="next(14)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>15. Pokud u dospělého člověka provádíme srdeční masáž, hrudník stlačujeme do hloubky:</h1>
+<hr/>
+<p><input type="radio" name="question15" id="correct15">Alespoň 5 cm, ale nikoliv více než 6 cm</p>
+<p><input type="radio" name="question15">Alespoň 6 cm</p>
+<p><input type="radio" name="question15">Alespoň 3 cm, ale nikoliv více než 5 cm</p>
+<button class="next" onclick="next(15)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>16. Zotavovací (stabilizovaná) poloha je:</h1>
+<hr/>
+<p><input type="radio" name="question16">Na zádech</p>
+<p><input type="radio" name="question16" id="correct16">Na boku</p>
+<p><input type="radio" name="question16">V polosedě</p>
+<button class="next" onclick="next(16)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>17. Zvolte správné tvrzení k zotatovací poloze:</h1>
+<hr/>
+<p><input type="radio" name="question17" id="correct17">Doporučuje se ji využít, pokud není podezření na poranění páteře, a v případě zvracení pacienta je její použití nutné</p>
+<p><input type="radio" name="question17">Pacienta uvádíme vždy do zotavovací polohy</p>
+<p><input type="radio" name="question17">Pomáhá udržet fyziologickou teplotu pacienta</p>
+<button class="next" onclick="next(17)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>18. Pokud postižený v zotavovací poloze nedýchá či dýchá abnormálně:</h1>
+<hr/>
+<p><input type="radio" name="question18">Jedná se o přechodný stav, který sám pomine</p>
+<p><input type="radio" name="question18" id="correct18">Patrně jsou dýchací cesty ucpané - s postiženým nehýbeme, ale pokusíme se vyčistit dutinu ústní a dýchací cesty</p>
+<p><input type="radio" name="question18">Převalíme ho na záda a začneme srdeční masáž</p>
+<button class="next" onclick="next(18)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>19. Kdy přerušíme resuscitaci?</h1>
+<hr/>
+<p><input type="radio" name="question19">Po 30 minutách</p>
+<p><input type="radio" name="question19">Po 1 hodině</p>
+<p><input type="radio" name="question19" id="correct19">Nepřerušujeme do příjezdu ZZS</p>
+<button class="next" onclick="next(19)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>20. Poranění páteře u postiženého předpokládáme, pokud je mechanismus úrazu/nehody takový, že vzniká riziko poranění páteře. Mezi nejčastější příčiny poranění patří:</h1>
+<hr/>
+<p><input type="radio" name="question20" id="correct20">Bungee jumping</p>
+<p><input type="radio" name="question20">Autonehody</p>
+<p><input type="radio" name="question20">Pouliční bitka</p>
+<button class="next" onclick="next(20)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>21. Jak zastavíte masivní vnější krvácení?</h1>
+<hr/>
+<p><input type="radio" name="question21">Přiložením ledu na ránu</p>
+<p><input type="radio" name="question21" id="correct21">Přímým tlakem na ránu v místě krvácení</p>
+<p><input type="radio" name="question21">Obvázáním rány jakýmkoliv kusem látky</p>
+<button class="next" onclick="next(21)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>22. Jak můžeme pomoci člověku, který má astmatický záchvat?</h1>
+<hr/>
+<p><input type="radio" name="question22">Dáme mu papírový sáček, do kterého dýchá, v případě zhoršení voláme ZZS</p>
+<p><input type="radio" name="question22" id="correct22">Posadíme ho a snažíme se ho uklidnit, v případě zhoršení voláme ZZS</p>
+<p><input type="radio" name="question22">Položíme ho do zotavovací polohy, v případě zhoršení voláme ZZS</p>
+<button class="next" onclick="next(22)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>23. Nastanou-li u diabetika příznaky hypoglykémie (např. hlad, podrážděnost, úzkost, v krajním případě bezvědomí), jak budete postupovat?</h1>
+<hr/>
+<p><input type="radio" name="question23" id="correct23">Dáme mu něco sladkého s snažíme se ho uklidnit, v případě vážnějších příznaků voláme ZZS</p>
+<p><input type="radio" name="question23">Aplikujeme inzulin, v případě nejistoty voláme ZZS</p>
+<p><input type="radio" name="question23">Hypoglykémie není stav, který by byl u diabetiků nebezpečný</p>
+<button class="next" onclick="next(23)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>24. Heimlichův manévr používáme, pokud se někdo začne dusit z důvodu obstrukce dýchacích cest cizím předmětem. Postiženého nejprve obejmeme zezadu, předkloníme ho a:</h1>
+<hr/>
+<p><input type="radio" name="question24">Sevřeme jednu ruku v pěst, přiložíme jí postiženému mezi pupík a hrudní koš, pěst první ruky sevřeme druhou rukou a prudce stlačíme dovnitř</p>
+<p><input type="radio" name="question24">Identický postup jako možnost „a“, ale pěst přikládáme na pupík</p>
+<p><input type="radio" name="question24" id="correct24">Identický postup jako možnost „a“, ale stlačujeme prudce nahoru a dovnitř</p>
+<button class="next" onclick="next(24)">NEXT</button>
+</div>
+
+<div class="container">
+<h1>25. Zvolte správný postup první pomoci osobě, která se začne dusit jídlem:</h1>
+<hr/>
+<p><input type="radio" name="question25" id="correct25">Snažíme se osobě dopomoci jídlo vykašlat → osobu předkloníme a 5x udeříme mezi lopatky → 5x provedeme Heimlichův manévr → střídáme 5x úder mezi lopatky a 5x Heimlichův manévr, dokud se dýchací cesty neuvolní nebo osoba neztratí vědomí → pokud osoba ztratí vědomí, začneme resuscitovat</p>
+<p><input type="radio" name="question25">Identický postup jako možnost „a“, ale střídáme 2 Heimlichovy manévry a 2 údery mezi lopatky</p>
+<p><input type="radio" name="question25">Identický postup jako možnost „a“, ale střídáme 3 Heimlichovy manévry a 3 údery mezi lopatky</p>
+<button onclick="result()">SUBMIT QUIZ</button>
+</div>
+
+<script>
+// displaying the first block of question
+document.getElementsByClassName('container')[0].style.display = "block";
+
+// DEFINING THE NEXT FUNCTION
+function next(id) {
+document.getElementsByClassName('container')[id-1].style.display = "none";
+document.getElementsByClassName('container')[id].style.display = "block";
+
+}
+//getting final result
+function result() {
+var score = 0;
+if (document.getElementById('correct1').checked) {
+score++;
+}
+if (document.getElementById('correct2').checked) {
+score++;
+}
+if (document.getElementById('correct3').checked) {
+score++;
+}
+if (document.getElementById('correct4').checked) {
+score++;
+}
+if (document.getElementById('correct5').checked) {
+score++;
+}
+if (document.getElementById('correct6').checked) {
+score++;
+}
+if (document.getElementById('correct7').checked) {
+score++;
+}
+if (document.getElementById('correct8').checked) {
+score++;
+}
+if (document.getElementById('correct9').checked) {
+score++;
+}
+if (document.getElementById('correct10').checked) {
+score++;
+}
+if (document.getElementById('correct11').checked) {
+score++;
+}
+if (document.getElementById('correct12').checked) {
+score++;
+}
+if (document.getElementById('correct13').checked) {
+score++;
+}
+if (document.getElementById('correct14').checked) {
+score++;
+}
+if (document.getElementById('correct15').checked) {
+score++;
+}
+if (document.getElementById('correct16').checked) {
+score++;
+}
+if (document.getElementById('correct17').checked) {
+score++;
+}
+if (document.getElementById('correct18').checked) {
+score++;
+}
+if (document.getElementById('correct19').checked) {
+score++;
+}
+if (document.getElementById('correct20').checked) {
+score++;
+}
+if (document.getElementById('correct21').checked) {
+score++;
+}
+if (document.getElementById('correct22').checked) {
+score++;
+}
+if (document.getElementById('correct23').checked) {
+score++;
+}
+if (document.getElementById('correct24').checked) {
+score++;
+}
+if (document.getElementById('correct25').checked) {
+score++;
+}
+alert("your score is: "+ score);
+}
+
+</script>
+
+</body>
+</html>
+// +''[]{}
